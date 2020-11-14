@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quizzes</title>
+	<style>
+.btn-group .button {
+    background-color: rgb(221,221,221); /* Gray */
+    border: 2px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+.btn-group .button:hover {
+    background-color: rgb(58,153,217);
+</style>
+</style>
+</head>
+<body style="background-color:rgb(58, 153, 217);">
+	<center>
+<h1>Welcome to Teacher's Dashboard</h1>
+<form action="/logout"> 
+<div class="btn-group">
+  <button class="button">Log Off</button>
+</form>
+<form action="/dashboard">
+  <button class="button">Student's List</button>
+</form>
+<form action="/quizzes/add">
+  <button class="button">Add Quizzes</button>
+</form>
+<form action="/results/add">
+  <button class="button">Add Results</button>
+</form>
+</div>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h2 align="center", style='margin-top: 100px'>Student's Quizzes</h2>
+
+<table style="margin-top: 100px">
+	<tr>
+    <th>Quiz ID</th><th>Subject</th><th>Number of Questions</th><th>Quiz Date</th>
+  </tr>
+{% for row in quizzes_all_rows %}
+<tr>
+	<td>{{row[0]}}</td><td>{{row[1]}}</td><td>{{row[2]}}</td><td>{{row[3]}}</td>
+  </tr>
+{% endfor %}
+  </table>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Student</title>
+
+<style>
+.btn-group .button {
+    background-color: rgb(221,221,221); /* Gray */
+    border: 1px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width: 150px;
+    display: block;
+    margin-left: 1050px;
+
+}
+
+.btn-group .button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+.btn-group .button:hover {
+    background-color: rgb(58,153,217);
+}
+
+.button {
+    background-color: rgb(221,221,221); /* Gray */
+    border: 2px solid black;
+    color: black;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {width: 250px;}
+.button2 {width: 50%;}
+.button3 {width: 100%;}
+
+</style>
+</head>
+<body>
+	<center>
+	<h1>Add Students</h1>
+	</center>
+
+<form action="/logout"> 
+<div class="btn-group">
+  <button class="button">Log Off</button>
+</form>
+<form action="/dashboard">
+  <button class="button">Dashboard</button>
+</form>
+<form action="/quizzes">
+  <button class="button">Quizzes</button>
+</form>
+</div>
+<body style="background-color:rgb(58, 153, 217);">
+
+	<br><br>
+<form action="" method ="post">
+
+  <div >
+    <label ><font size="5"><strong>Enter First Name</strong></font></label>
+    <input type="text" placeholder="First Name" name="first_name" required>
+
+    <label ><font size="5"><strong>Enter Last Name</strong></font></label>
+    <input type="text" placeholder="Last Name" name="last_name" required>
+
+    
+        
+    <button class="button" type="submit">Add</button>
+  
+  </div>
+</form>
+</body>
+</html>

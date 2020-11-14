@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a Quiz Result</title>
+<style>
+.btn-group .button {
+    background-color: rgb(221,221,221); /* Gray */
+    border: 2px solid black;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+.btn-group .button:hover {
+    background-color: rgb(58,153,217);
+</style>
+<style>
+.button {
+    background-color: rgb(221,221,221); /* Gray */
+    border: none;
+    color: solid black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {padding: 10px 24px;}
+
+</style>
+</style>
+</head>
+<center>
+<body style="background-color:rgb(58, 153, 217);">
+<p><h2>Select Student, Select Quiz, Enter Quiz Result:</h2>
+  <div>
+<form action="/logout"> 
+<div class="btn-group">
+  <button class="button">Log Off</button>
+</form>
+<form action="/dashboard">
+  <button class="button">Student's List</button>
+</form>
+</div>   
+<form action="add" method="post">
+    <p><select name="student"><br>
+        <option value="Select">Select a Student:</option>
+              {% for row in student %}
+              <option value="{{row[0]}}">{{row[1]}} {{row[2]}}</option>
+              {% endfor %}
+    </select></p>
+    <p><select name="quiz"><br>
+        <option value="Select">Select a Quiz:</option>
+              {% for row in quiz %}
+              <option value="{{row[0]}}">{{row[1]}}</option>
+              {% endfor %}
+    </select></p>
+    <p>Quiz Result:<input type="number" placeholder="Score (0-100)" name="score" max="100" required></p>
+    <button class="button button1" value="Submit">Submit</button>
+    {% if error %}
+<p class=error><strong>Error:</strong> {{error}}
+    {% endif %}
+</form>
+</body>
+</html>
